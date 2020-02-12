@@ -3,5 +3,8 @@
         "activityBar.background": "#4A1062",
         "titleBar.activeBackground": "#671789",
         "titleBar.activeForeground": "#FCF8FE"
-    }
+    },
+    "cSpell.ignoreWords": [
+        "noteful"
+    ]
 }
