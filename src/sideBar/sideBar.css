@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 .sideBar {
+    padding-top: 20px;
     width: 200px;
     position: fixed;
     height: 100%;
