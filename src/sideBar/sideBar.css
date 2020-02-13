@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+.sideBar {
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    border: 1px solid black;
+}
