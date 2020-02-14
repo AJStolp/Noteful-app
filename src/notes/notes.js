@@ -9,7 +9,7 @@ const notes = (props) => {
         <ul key={i} className='notes'>
             <li>
                 Note 1 <br />
-                {value.name}
+                {value.name}<br />
                 <Moment>
                     {value.modified}
                 </Moment>

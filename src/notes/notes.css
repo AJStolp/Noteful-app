@@ -16,10 +16,10 @@
     align-items: center;
     justify-content: center;
     font-size: 2.5vw;
+    padding-bottom: 20px;
 }
 
 .noteButton {
-    text-align: left;
     height: 20px;
     border: 1px solid black;
 }
