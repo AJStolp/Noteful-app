@@ -9,10 +9,15 @@ const notes = (props) => {
         <ul key={i} className='notes'>
             <li>
                 Note 1 <br />
-                {value.name}<br />
+                {value.name}
+                <br />
+                Date Modified <br />
                 <Moment>
-                    {value.modified}
+                  {value.modified}
                 </Moment>
+            <button className='deleteButton'>
+                Delete Note
+            </button>
             </li>
         </ul>
     ));
