@@ -1,26 +1,31 @@
+  
 import React from 'react';
 import './notes.css';
 import dummyStore from '../dummy-store';
 import Moment from 'react-moment';
 
-const notes = () => {
-    const dateToFormat = new Date('1976-04-19T12:59-0500');
-
-
+const notes = (props) => {
     const note = dummyStore.notes.map( (value, i) => (
         <ul key={i} className='notes'>
-            <li className='notesLi'>
+            <li>
+                Note 1 <br />
                 {value.name}
-                {value.modified}
+                <Moment>
+                    {value.modified}
+                </Moment>
             </li>
         </ul>
     ));
 
     return (
-        <div>
+        <div className='notesLi'>
             {note}
+            <button className='noteButton'>
+                Add Note
+            </button>
         </div>
     )
 }
 
 export default notes
+
