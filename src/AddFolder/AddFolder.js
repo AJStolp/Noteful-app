@@ -17,6 +17,7 @@ class AddFolder extends Component {
 
     createNewFolder = (e) => {
         console.log(e.target.value)
+        e.preventDefault();
         this.setState({
             folder: e.target.value,
         })
