@@ -142,7 +142,7 @@ class App extends Component {
       folders: this.state.folders,
       deleteNote: this.handleDeleteNote,
       addNote: this.handleNoteAdd,
-
+      addFolder: this.handleFolderData
     };
     return (
 

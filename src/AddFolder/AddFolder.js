@@ -17,7 +17,6 @@ class AddFolder extends Component {
 
     createNewFolder = (e) => {
         console.log(e.target.value)
-        e.preventDefault();
         this.setState({
             folder: e.target.value,
         })
@@ -26,6 +25,7 @@ class AddFolder extends Component {
 
     handleFolderSubmit = (folderSubmit) => {
         console.log(folderSubmit)
+        folderSubmit.preventDefault();
         const url = `${config.API_ENDPOINT}/folders`
         const options = {
             method: 'POST',
