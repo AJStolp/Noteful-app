@@ -1,47 +1,42 @@
 import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import CircleButton from '../CircleButton/CircleButton'
+import Note from '../Note/Note'
 import APIContext from '../APIContext'
-import {findNote, findFolder} from '../notes-helpers'
+import {findNote} from '../notes-helpers'
 import './NotePageMain.css'
 
 
-export default class NotePageNav extends React.Component {
+
+
+export default class NotePageMain extends React.Component {
     static defaultProps = {
-        history: {
-            goBack: () => { }
-        },
-        math: {
+        match: {
             params: {}
-        },
+        }
     }
-    static contextType = APIContext;
+    static contextType= APIContext
+
+
+    handleDeleteNote = noteId => {
+        this.props.history.push('/')
+    }
 
     render() {
-        const {notes, folders} = this.context
+        const {notes=[]} = this.context
         const {noteId} = this.props.match.params
-        const note = findNote(notes, noteId) || {}
-        const folder = findFolder(folders, note.folderId)
+        const note = findNote(notes, noteId) || {content: ''}
         return (
-            <div className = 'NotePageNav'>
-                <CircleButton 
-                    tag='button'
-                    role='link'
-                    onClick={() => this.props.history.goBack()}
-                    className='NotePagenav_back-button'
-                >
-                    <FontAwesomeIcon icon='chevron-left' />
-                    <br />
-                    Back
-                </CircleButton>
-                {folder && (
-                    <h3 className='NotePageNav_folder-name'>
-                        {folder.name}
-                    </h3>
-                )}
-
-            </div>
+            <section className='NotePageMain'>
+                <Note 
+                    id={note.id}
+                    modified={note.modified}
+                    onDeleteNote={this.handleDeleteNote}
+                />
+                <div className='NotePageMain_content'>
+                    {note.content.split(/\n \r|\n/).map((para, i) =>
+                        <p key={i}>{para}</p>
+                    )}
+                </div>
+            </section>
         )
-    
     }
 }

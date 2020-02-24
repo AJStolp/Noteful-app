@@ -44,7 +44,7 @@ class AddFolder extends Component {
                 return res.json();
             })
             .then(data => {
-                this.context.addfolder()
+                this.context.addfolder(data)
             })
             .catch(err => {
                 console.log(err.message)
@@ -89,4 +89,4 @@ AddFolder.propTypes = {
 }
 
 
-export default AddFolder 
+export default AddFolder
