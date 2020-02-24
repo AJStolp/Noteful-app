@@ -134,7 +134,6 @@ class AddNote extends Component {
     }
 
 }
-
 AddNote.propTypes = {
     id: PropTypes.string.isRequired
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom'
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import CircleButton from '../CircleButton/CircleButton'
 import {countNotesForFolder} from '../notes-helpers'
 import APIContext from '../APIContext'
@@ -37,7 +37,7 @@ export default class NoteListNav extends React.Component {
                         type='button'
                         className='NoteListNav_add-folder-button'
                     >
-                        {/* <FontAwesomeIcon icon='plus' /> */}
+                        <FontAwesomeIcon icon='plus' />
                         <br />
                         Folder
                     </CircleButton>

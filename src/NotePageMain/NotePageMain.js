@@ -1,42 +1,47 @@
 import React from 'react'
-import Note from '../Note/Note'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import CircleButton from '../CircleButton/CircleButton'
 import APIContext from '../APIContext'
-import {findNote} from '../notes-helpers'
+import {findNote, findFolder} from '../notes-helpers'
 import './NotePageMain.css'
 
 
-
-
-export default class NotePageMain extends React.Component {
+export default class NotePageNav extends React.Component {
     static defaultProps = {
-        match: {
+        history: {
+            goBack: () => { }
+        },
+        math: {
             params: {}
-        }
+        },
     }
-    static contextType= APIContext
-
-
-    handleDeleteNote = noteId => {
-        this.props.history.push('/')
-    }
+    static contextType = APIContext;
 
     render() {
-        const {notes=[]} = this.context
+        const {notes, folders} = this.context
         const {noteId} = this.props.match.params
-        const note = findNote(notes, noteId) || {content: ''}
+        const note = findNote(notes, noteId) || {}
+        const folder = findFolder(folders, note.folderId)
         return (
-            <section className='NotePageMain'>
-                <Note 
-                    id={note.id}
-                    modified={note.modified}
-                    onDeleteNote={this.handleDeleteNote}
-                />
-                <div className='NotePageMain_content'>
-                    {note.content.split(/\n \r|\n/).map((para, i) =>
-                        <p key={i}>{para}</p>
-                    )}
-                </div>
-            </section>
+            <div className = 'NotePageNav'>
+                <CircleButton 
+                    tag='button'
+                    role='link'
+                    onClick={() => this.props.history.goBack()}
+                    className='NotePagenav_back-button'
+                >
+                    <FontAwesomeIcon icon='chevron-left' />
+                    <br />
+                    Back
+                </CircleButton>
+                {folder && (
+                    <h3 className='NotePageNav_folder-name'>
+                        {folder.name}
+                    </h3>
+                )}
+
+            </div>
         )
+    
     }
 }

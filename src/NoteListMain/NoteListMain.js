@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Note from '../Note/Note'
 import CircleButton from '../CircleButton/CircleButton'
 import APIContext from '../APIContext'
@@ -68,7 +68,7 @@ export default class NoteListMain extends React.Component {
                         className='NoteListMain_add-note-button'
                         onClick = {() => this.addNoteDisplay()}
                     >
-                        
+                        <FontAwesomeIcon icon='plus' />
                         <br />
                         Note
                     </CircleButton>
