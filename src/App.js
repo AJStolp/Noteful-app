@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Route, Link} from 'react-router-dom';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import NoteListNav from './NoteListNav/NoteListNav';
-import NotePageNav from './NotePageNav/NotePageNav';
+import NotePageNav from './NotePageNav/NotPageNav';
 import NoteListMain from './NoteListMain/NoteListMain';
 import NotePageMain from './NotePageMain/NotePageMain';
 import APIContext from './APIContext'
@@ -152,7 +151,7 @@ class App extends Component {
               <header>
                 <h1>
                   <Link to="/">Noteful</Link>{' '}
-                  <FontAwesomeIcon icon="check-double" />
+                  {/* <FontAwesomeIcon icon="check-double" /> */}
                 </h1>
               </header>
               <main className="App_main">{this.renderMainRoutes()}</main>
