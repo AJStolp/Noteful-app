@@ -74,7 +74,7 @@ class App extends Component {
   }
 
   handleFolderSubmit = (folderSubmit) => {
-    folderSubmit.preventDefault();
+    // folderSubmit.preventDefault();
     this.setState({
       folders: [...this.state.folders, folderSubmit],
     })
@@ -142,7 +142,7 @@ class App extends Component {
       folders: this.state.folders,
       deleteNote: this.handleDeleteNote,
       addNote: this.handleNoteAdd,
-      addFolder: this.handleFolderData
+      addFolder: this.handleFolderSubmit
     };
     return (
 
