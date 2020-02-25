@@ -127,7 +127,7 @@ class App extends Component {
           path="/note/:noteId"
           component={NotePageMain}
         />
-        <Route path='/add-folder' component={AddFolder} />
+        <Route path='/add-Folder' component={AddFolder} />
 
       </>
     );

@@ -1,12 +1,14 @@
 import React, {Component} from  'react';
 import PropTypes from 'prop-types'
 import config from '../config'
-
+import APIContext from '../APIContext'
 
 
 
 
 class AddFolder extends Component {
+    static contextType = APIContext
+
     constructor(props) {
         super(props);
         this.state = {
@@ -45,7 +47,8 @@ class AddFolder extends Component {
                 return res.json();
             })
             .then(data => {
-                this.context.addfolder(data)
+                this.context.addFolder(data)
+                this.props.history.push('/')
             })
             .catch(err => {
                 console.log(err.message)
