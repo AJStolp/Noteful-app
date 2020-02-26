@@ -12,6 +12,5 @@ export const getNotesForFolder = (notes=[], folderId) => (
 )
 
 export const countNotesForFolder = (notes = [], folderId) => {
-    console.log('notes are ', notes, 'folderId is ', folderId)
     return notes.filter(note => note.folderId === folderId).length
 }

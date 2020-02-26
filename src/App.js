@@ -103,7 +103,7 @@ class App extends Component {
             path="/add-note" 
             component={AddNote} 
             handleFolderData = {this.handleFolderData}
-            onSubmit = {noteSubmit => this.handleNoteSubmit(noteSubmit)}
+            onSubmit = {noteSubmit => this.handleNoteAdd(noteSubmit)}
             />
       </> 
     );

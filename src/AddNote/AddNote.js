@@ -43,7 +43,7 @@ class AddNote extends Component {
             content: this.state.content,
             folderId: this.state.folder,
         }
-
+      
         const url = `${config.API_ENDPOINT}/notes`;
         const options = {
             method: 'POST',
@@ -64,6 +64,7 @@ class AddNote extends Component {
                 return res.json();
             })
             .then(data => {
+                console.log(data);
                 this.context.addNote(data);
                 this.props.history.push('/');
             })
