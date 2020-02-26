@@ -1,5 +1,4 @@
 import React, {Component} from  'react';
-import PropTypes from 'prop-types';
 import config from '../config';
 import APIContext from '../APIContext';
 
@@ -86,11 +85,5 @@ class AddFolder extends Component {
 
     
 }
-
-
-AddFolder.propTypes = {
-    id: PropTypes.string.isRequired
-}
-
 
 export default AddFolder
