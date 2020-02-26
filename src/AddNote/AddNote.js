@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import APIContext from '../APIContext'
 import CircleButton from '../CircleButton/CircleButton'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import PropTypes from 'prop-types'; 
 import config from '../config'
 
 
@@ -66,6 +65,7 @@ class AddNote extends Component {
             })
             .then(data => {
                 this.context.addNote(data);
+                this.props.history.push('/');
             })
             .catch(err => {
                 console.log(err.message)
@@ -135,9 +135,6 @@ class AddNote extends Component {
 
 }
 
-AddNote.propTypes = {
-    id: PropTypes.string.isRequired
-}
 
 
 export default AddNote

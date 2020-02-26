@@ -1,7 +1,7 @@
 import React, {Component} from  'react';
-import PropTypes from 'prop-types'
-import config from '../config'
-import APIContext from '../APIContext'
+import PropTypes from 'prop-types';
+import config from '../config';
+import APIContext from '../APIContext';
 
 
 

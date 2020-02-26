@@ -74,7 +74,6 @@ class App extends Component {
   }
 
   handleFolderSubmit = (folderSubmit) => {
-    // folderSubmit.preventDefault();
     this.setState({
       folders: [...this.state.folders, folderSubmit],
     })
