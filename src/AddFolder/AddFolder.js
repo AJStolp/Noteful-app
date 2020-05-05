@@ -2,9 +2,6 @@ import React, {Component} from  'react';
 import config from '../config';
 import APIContext from '../APIContext';
 
-
-
-
 class AddFolder extends Component {
     static contextType = APIContext
 
@@ -27,7 +24,7 @@ class AddFolder extends Component {
     handleFolderSubmit = (folderSubmit) => {
         console.log(folderSubmit)
         folderSubmit.preventDefault();
-        const url = `${config.API_ENDPOINT}/folders`
+        const url = `${config.API_ENDPOINT}/folders`;
         const options = {
             method: 'POST',
             headers: {

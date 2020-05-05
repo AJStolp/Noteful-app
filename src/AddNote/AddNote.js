@@ -31,7 +31,6 @@ class AddNote extends Component {
         this.setState({
             [event.target.name]: event.target.value,
         });
-        console.log(this.state)
     }
 
 
@@ -41,7 +40,7 @@ class AddNote extends Component {
         const addedData = {
             name: this.state.notes,
             content: this.state.content,
-            folderId: this.state.folder,
+            folder_id: this.state.folder,
         }
       
         const url = `${config.API_ENDPOINT}/notes`;
@@ -53,9 +52,6 @@ class AddNote extends Component {
             body: JSON.stringify(addedData)
         }
 
-
-
-
         fetch(url, options)
             .then(res => {
                 if (!res.ok) {
@@ -64,7 +60,6 @@ class AddNote extends Component {
                 return res.json();
             })
             .then(data => {
-                console.log(data);
                 this.context.addNote(data);
                 this.props.history.push('/');
             })
@@ -76,6 +71,7 @@ class AddNote extends Component {
 
 
     render() {
+        
         const folderOptions = this.context.folders.map((folder, i) => <option value={folder.id} key={i}> {folder.name} </option>)
 
         return (

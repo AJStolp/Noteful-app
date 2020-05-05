@@ -11,19 +11,13 @@ import config from './config'
 import AddFolder from './AddFolder/AddFolder'
 import './App.css';
 
-
-
-
 class App extends Component {
+  
   state = {
       folders: [],
       notes: [],
     }
   
-
-
-
-
   componentDidMount() {
     Promise.all([
       fetch(`${config.API_ENDPOINT}/notes`),
